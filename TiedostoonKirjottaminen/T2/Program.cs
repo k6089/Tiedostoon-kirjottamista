@@ -33,18 +33,27 @@ namespace T2
                 {
                     break;
                 }
-                numtemp = double.Parse(temp);
-                kerto = numtemp * 10;
 
-                if (kerto % 10 == 0)
+                try
                 {
-                    koko = Convert.ToInt16(numtemp);
-                    swint.WriteLine(koko);
-                }
-                else
+
+                    numtemp = double.Parse(temp);
+                    kerto = numtemp * 10;
+
+                    if (kerto % 10 == 0)
+                    {
+                        koko = Convert.ToInt16(numtemp);
+                        swint.WriteLine(koko);
+                    }
+                    else
+                    {
+                        desi = numtemp;
+                        swdoub.WriteLine(desi);
+                    }
+                } catch (FormatException)
+
                 {
-                    desi = numtemp;
-                    swdoub.WriteLine(desi);
+                    Console.WriteLine("Ei ollu numero");
                 }
 
 
